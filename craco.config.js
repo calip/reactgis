@@ -4,4 +4,4 @@ module.exports = {
         plugin: require("craco-cesium")()
       }
     ]
-  };
+};

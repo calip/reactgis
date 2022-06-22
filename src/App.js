@@ -1,16 +1,27 @@
 import React from "react";
-import { Cartesian3, Color } from "cesium";
-import { Viewer, Entity } from "resium";
+import aircraft from "./models/a318.glb"
+import { Viewer } from "resium";
+import * as Resium from "resium";
+import * as Cesium from 'cesium';
+
+const position = Cesium.Cartesian3.fromDegrees(106.774124, -6.200000, 100);
 
 function App() {
   return (
     <Viewer full>
-      <Entity
-        name="Tokyo"
-        position={Cartesian3.fromDegrees(139.767052, 35.681167, 100)}
-        point={{ pixelSize: 10, color: Color.WHITE }}
-        description="hoge"
-      />
+      <Resium.Entity
+                tracked 
+                position={position}
+            >
+        <Resium.ModelGraphics
+                    scale={1}
+                    uri={aircraft}
+                    minimumPixelSize={100}
+                    runAnimations
+                    show
+                    color={Cesium.Color.WHITE}
+                />
+      </Resium.Entity>
     </Viewer>
   );
 }
