@@ -10,9 +10,12 @@ function App() {
   return (
     <Viewer full>
       <Resium.Entity
+                name="Airplane"
+                label={"Airplane"}
                 tracked 
+                point={{ pixelSize: 50, color: Cesium.Color.BLUE }}
                 position={position}
-            >
+      >
         <Resium.ModelGraphics
                     scale={1}
                     uri={aircraft}
@@ -20,7 +23,7 @@ function App() {
                     runAnimations
                     show
                     color={Cesium.Color.WHITE}
-                />
+        />
       </Resium.Entity>
     </Viewer>
   );
